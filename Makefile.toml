@@ -1,0 +1,28 @@
+
+[tasks.cuisine]
+workspace = false
+script = []
+
+[tasks.cuisine.mac]
+workspace = false 
+script = [
+  "cargo build --package cuisine",
+  "vst3-sys/osx-bundler.sh cuisine target/debug/libcuisine.dylib"
+]
+
+[tasks.cuisine.linux]
+workspace = false
+script = [
+    "cargo build --package cuisine",
+    "mkdir -p target/debug/cuisine.vst3/Contents/x86_64-linux",
+    "mkdir -p target/debug/cuisine.vst3/Contents/Resources",
+    "cp target/debug/libcuisine.so target/debug/cuisine.vst3/Contents/x86_64-linux/cuisine.so"
+]
+
+[tasks.cuisine.windows]
+workspace = false
+script_runner = "@shell"
+script = [
+    "cargo build --package cuisine",
+    "cp target/debug/cuisine.dll target/debug/cuisine.vst3"
+]

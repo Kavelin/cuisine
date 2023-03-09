@@ -1,0 +1,18 @@
+[package]
+name = "cuisine"
+version = "0.1.0"
+authors = ["Kavelin <dev.velp@gmail.com>"]
+edition = "2021"
+description = """
+WAY MKAMUNFKJoikJI
+"""
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+log = "0.4.8"
+flexi_logger = "0.15.2"
+widestring = "0.4.0"
+vst3-sys = { path = "vst3-sys"}
+vst3-com = { path = "vst3-sys/com" }
